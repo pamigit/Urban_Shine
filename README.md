@@ -9,7 +9,7 @@
    It will be open index.html always.
    
 4.)Role: 
-   -For Admin role write: username="Nancy", password="Davolio" (This role can add new product).
-   -For User role write: username="Pamela", password="Prascevic" (This role can add product into his basket, and remove from it).
+   - For Admin role write: username="Nancy", password="Davolio" (This role can add new product).
+   - For User role write: username="Pamela", password="Prascevic" (This role can add product into his basket, and remove from it).
 
 5.)All web functionality isn't finished, and my app don't work correctly, but i will change so soon :-D   
