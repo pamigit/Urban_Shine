@@ -1,0 +1,252 @@
+    /* Index CSS */
+body {
+	background-image: url("../images/pic4.jpg");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+	text-align: center;
+	
+}
+#loginbtn {
+	box-shadow: 10px 10px 5px black;
+	font-weight: bold;
+	font-size: 20px;
+	background-image: url("../images/images.jpg");
+	color: white;
+	width: 100%;
+}
+#loginbtn:hover {
+	color: black;
+}
+.login fieldset {
+	background-image: url("../images/pic5.jpg");
+	margin-top: 20%;
+	padding: 4%;
+	opacity: 0.8;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+.login fieldset:hover {
+	opacity: 1;
+}
+
+
+           /*Main CSS*/
+	
+    /* Navigation CSS */
+.pami {
+	font-size: 30px;
+	font-family: 'Shrikhand', cursive;
+}
+sup {
+	color: #00bfff;
+}
+sub {
+	color: #ff00fe;
+}
+.ulpami {
+	color: black;
+	font-weight: bold;
+		}
+.navpami {
+	background-color: #f2fe07;
+	padding: 1% 0;
+}
+
+      /* Header Section CSS */
+header .img-responsive {
+	min-height: 50px;
+	max-height: 300px;
+	border: 2px solid red;
+} 
+header {
+	padding-top: 100px;
+	padding-bottom: 3%;
+}
+.infoProfile, .basket {
+	background-color: white;
+	margin-top: 5%;
+	border: 2px solid red;
+}
+.basket {
+	padding-top: 1%;
+}
+.basketbtn {
+	border: 1px solid black;
+	box-shadow: 4px 4px 5px black;
+	font-size: 20px;
+	background-image: url("../images/images.jpg");
+	color: white;
+}
+.basketbtn:hover {
+	color: black;
+}
+.basket p {
+	padding-top: 2%;
+	font-size: 16px;
+}
+#newProduct h4 {
+	font-family: 'Shrikhand', cursive;
+}
+#newProduct .modal-content {
+	background-color: #45b3e0;
+}
+#newProduct .modal-header {
+	background-color: yellow;
+}
+#divBasket {
+	padding: 1%;
+}
+#divBasket a {
+	text-decoration: none;
+	color: white;
+}
+      /* Kendo upload CSS*/
+.dropZoneElement {
+	position: relative;
+	display: inline-block;
+	background-color: #f8f8f8;
+	border: 1px solid #c7c7c7;
+	width: 230px;
+	height: 110px;
+	text-align: center;
+}
+.textWrapper {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	font-size: 24px;
+	line-height: 1.2em;
+	font-family: Arial,Helvetica,sans-serif;
+	color: #000;
+}
+.dropImageHereText {
+	color: #c7c7c7;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+.product {
+	float: left;
+	position: relative;
+	margin: 0 10px 10px 0;
+	padding: 0;
+}
+.product img {
+	width: 110px;
+	height: 110px;
+}
+.wrapper:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+       /* Section Actions*/
+#actions {
+	padding: 1% 0;
+	background-image: url("../images/pic5.jpg");
+	border-top: 3px solid red;
+}
+#actions .img-responsive {
+	min-height: 100px;
+	max-height: 350px;
+
+}
+#carouselItem .carousel-caption {
+	color: #ff0000;
+	font-weight: bold;
+	left: 0;
+	bottom: 0;
+}
+
+        /*Shop Section*/
+#shop {
+	border-top: 1px solid red;
+}
+#shop .col-sm-10 {
+	background-image: url("../images/pic2.jpg");
+	padding: 2% 0;
+	color: white;
+	font-weight: bold;
+	overflow: scroll;
+	height: 800px;
+}
+#shop .col-sm-10 button {
+	color: black;
+}
+#shop .col-sm-2 {
+	background-color: white;
+	padding: 10% 1%;
+	border: 2px solid red;
+	height: 800px;
+}
+#shop .col-sm-2 label {
+	color: #00184a;
+}
+#shop .img-responsive {
+	min-height: 50px;
+	max-height: 300px;
+	display: inline;
+}
+#shop .inline {
+	display: inline;
+}
+#shop input {
+	color: black;
+}
+#containerItems .col-sm-4 {
+	margin: 2% 0;
+}
+
+        /*Cart Section*/
+#cart {
+	background-image: url("../images/photoForCart.jpg");
+	padding: 2% 0;
+	color: white;
+	font-weight: bold;
+	min-height: 350px;
+	border: 1px solid red;
+}
+#cartItems button {
+	color: black;
+}
+#cartItems input {
+	color: black;
+}
+#cartItems .col-sm-2 {
+	margin: 2% 3%;
+}
+
+       /* Contact Form CSS */
+#contact .basketbtn {
+	margin-bottom: 10px;
+}
+#contact h1 {
+	color: white;
+}
+#contact {
+	background-image: url("../images/pic3.jpg");
+}
+#contact textarea {
+	color: black;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+        /* Footer Section CSS */
+footer {
+	padding: 1% 0;
+	background-color: yellow;
+}
+.copyright p {
+	font-size: 10px;
+}
+.footerLink a {
+	color: black;
+	padding-right: 2%;
+}
+
+

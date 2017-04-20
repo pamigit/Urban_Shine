@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	
+	  <title>Urban Shine</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+	  <!-- Bootstrap Library -->
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  
+	  <!--My custom CSS -->
+	  <link rel="stylesheet" type="text/css" href="styles/style.css">
+	  
+	  <!-- Google fonts link for heading -->
+	  <link href="https://fonts.googleapis.com/css?family=Shrikhand&subset=latin-ext" rel="stylesheet">
+	  
+	  <!--jquery-ui datapicker-->
+	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	  
+	  <!--Kendo UI-->
+	  <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.3.914/styles/kendo.common-material.min.css" />
+	  <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.3.914/styles/kendo.material.min.css" />
+	  <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.3.914/styles/kendo.material.mobile.min.css" />
+	  <script src="http://kendo.cdn.telerik.com/2016.3.914/js/kendo.all.min.js"></script>
+	  
+	  <!--Notify libraru-->
+	  <script src="scripts/notify.min.js"></script>
+	  
+	  <!--My custom JS-->
+	  <script src="scripts/main.js"></script>
+	  
+	</head>
+	
+	<body data-spy="scroll" data-target=".navbar">
+
+		<!-- Navigation Menu-->
+		<nav class="container-fluid navbar navbar-default navbar-fixed-top navpami">
+			<div class="container">
+				<!-- Brends name and collapse menu-->
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand pami" href="#"><sub><span class="glyphicon glyphicon-star-empty"></span></sub> Urban Shine  <sup><span class="glyphicon glyphicon-star-empty"></span></sup></a>
+					</div>
+					<!-- Links for Navigation Menu -->
+					<div class="collapse navbar-collapse" id="main-menu">
+						<ul class="nav navbar-nav navbar-right ulpami">
+							<li>
+								<a href="#actions">Akcije</a>
+							</li>
+							<li>
+								<a href="#shop">Ponuda</a>
+							</li>
+							<li>
+								<a href="#contact">Kontakt</a>
+							</li>
+							<li>
+								<a href="index.html">Odjava</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<!--Profile Section-->
+		<header class="container-fluid">
+			<section id="profile" class="container infoHeader">
+				<div class="row">
+					<!--Image div-->
+					<div class="col-sm-4 imgProfile">
+						<img id="profileImage" class="img-responsive img-thumbnail img-circle" src="images/20160627_142656.jpg" alt="profile"/>
+					</div>
+					<!--Profile info div-->
+					<div class="infoProfile col-sm-4">
+						<h2 id="fullNameProfile">Pamela Praščević</h2>
+						<p id="titleProfile">Profesor Fizike i Junior Web Developer</p>
+					</div>
+					<!--Div for Basket Button-->
+					<div id="divBasket" class="basket col-sm-3 col-sm-offset-1">
+						<button id="btnNewProduct" type="button" class="btn btn-lg basketbtn" data-toggle="modal" data-target="#newProduct">Dodaj proizvod</button>
+						<button id="btnCart" type="button" class="btn btn-lg basketbtn"><a href="#cart">Korpa</a></button>
+						<p id="totalSummary"><b>Ukupna suma:<span id="suma">0</span></b></p>
+					</div>
+				</div>
+				<!--Create modal button for adding items-->
+				<div class="modal fade" id="newProduct" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Dodavanje novog proizvoda</h4>
+							</div>
+							<div class="modal-body">
+								<form class="form-horizontal">
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Naziv proizvoda: </label>
+										<div class="col-sm-9">
+											<input class="form-control" id="productName" type="text" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Slika proizvoda: </label>
+										<div class="col-sm-9">
+											<div id="example" class="k-content">
+												<div class="demo-section k-content wide">
+													<div class="wrapper">		
+														<div id="selectedProductImage"></div>									
+														<div class="dropZoneElement">
+															<div class="textWrapper">
+																<p><span>+</span>Dodaj sliku</p>
+																<p class="dropImageHereText">Prevucite sliku koju želite</p>
+															</div>
+														</div>
+													 </div>
+												</div>
+												<input class="form-control" name="files" id="files" type="file" />
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="productCategory" class="col-sm-3 control-label">Kategorija: </label>
+										<div class="col-sm-9">
+											<select id="productCategory" class="form-control">
+												<option value="0">Izaberite kategoriju</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Cena: </label>
+										<div class="col-sm-9">
+											<input class="form-control" id="productPrice" type="number" min="0" value="100">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Datum: </label>
+										<div class="col-sm-9">
+											<input class="form-control" id="date" type="text">
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary basketbtn" onclick="createNewProduct()">Dodaj</button>
+								<button type="button" class="btn btn-default basketbtn" data-dismiss="modal">Odustani</button>
+							</div>
+						</div>     
+					</div>
+				</div>
+			</section>
+		</header>
+		
+		<!--Action section-->
+		<section id="actions" class="container-fluid">
+			<div id="carouselItem" class="carousel slide" data-ride="carousel">
+			    <!-- Indicators -->
+			    <ol class="carousel-indicators">
+				    <li data-target="#carouselItem" data-slide-to="0" class="active"></li>
+				    <li data-target="#carouselItem" data-slide-to="1"></li>
+			    </ol>
+			    <!-- Wrapper for slides -->
+			    <div class="carousel-inner" role="listbox">
+					<div class="item active container-fluid">
+						<div class="row text-center">
+							<div class="col-sm-4 col-xs-12">
+							  <img class="img-responsive img-rounded" src="images/kugliceRumGG.Jpeg" alt="kuglice">
+							  <div class="carousel-caption">
+								<h3>Giordani Gold kuglice za nijansiranje - 20% popusta</h3>
+							  </div>
+							</div>
+							<div class="col-sm-4 col-xs-12">
+							  <img class="img-responsive img-rounded" src="images/puderUKamGG.Jpeg" alt="puderKameni">
+							  <div class="carousel-caption">
+								<h3>Giordani Gold Jewel puder u prahu - 15% popusta</h3>
+							  </div>
+							</div>
+							<div class="col-sm-4 col-xs-12">
+							  <img class="img-responsive img-rounded" src="images/korektorGG.Jpeg" alt="korektor">
+							  <div class="carousel-caption">
+								<h3>Giordani Gold korektor - 20% popusta</h3>
+							  </div>
+							</div>
+					    </div>
+					</div>
+					<div class="item">
+						<div class="row text-center">
+							<div class="col-sm-4 col-xs-12">
+							  <img class="img-responsive img-rounded" src="images/maskaraGG.Jpeg" alt="maskara">
+							  <div class="carousel-caption">
+								<h3>Giordani Gold maskara za duže trepavice - 30% popusta</h3>
+							  </div>
+							</div>
+							<div class="col-sm-4 col-xs-12">
+							  <img class="img-responsive img-rounded" src="images/ruzJewelGG.Jpeg" alt="ruz">
+							  <div class="carousel-caption">
+								<h3>Giordani Gold Jewel ruž za usne - 25% popusta</h3>
+							  </div>
+							</div>
+							<div class="col-sm-4 col-xs-12">
+							  <img class="img-responsive img-rounded" src="images/cetkaZaPuderGG.Jpeg" alt="cetkaZaPuder">
+							  <div class="carousel-caption">
+								<h3>Giordani Gold Black četka za puder - 15% popusta</h3>
+							  </div>
+							</div>
+					    </div>
+					</div>
+			    </div>
+			    <!-- Left and right controls -->
+			    <a class="left carousel-control" href="#carouselItem" role="button" data-slide="prev">
+				  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				  <span class="sr-only">Previous</span>
+			    </a>
+			    <a class="right carousel-control" href="#carouselItem" role="button" data-slide="next">
+				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				  <span class="sr-only">Next</span>
+			    </a>
+			</div>
+		</section>
+		
+		<!--Shop section-->
+		<section id="shop" class="container-fluid">
+		  <div class="row">
+		    <!--Shop items-->
+			<div class="col-sm-10 col-xs-8">
+				<div id="containerItems" class="row text-center">
+					<!--<div class="col-sm-4">
+						<img class="img-responsive img-rounded" src="images/item1.Jpeg" alt="cetkaZaLice">
+						<h4>Četka za lice</h4>
+						<p>Pribor za negu kože</p>
+						<p>Cena: <span id="item1">139</span> din</p>
+						<p>Datum kreiranja: </p><span>dd.mm.yyyy</span>
+						<p class="inline">Količina: </p>
+						<input id="kolicina1" type="number" value="1"><br><br>
+						<button id="dodaj1" type="button" onclick="addItem(this)">Dodaj</button>
+						<button id="izbaci1" type="button" onclick="throwItem(this)">Izbaci</button>
+					</div>-->
+			    </div>
+			</div>
+			<!--Search items-->
+			<div class="col-sm-2 col-xs-4">
+				<div class="form">
+					<div class="form-group">
+						 <label for="filter" class="control-label">Pretraga</label>    
+						 <input type="text" class="form-control" id="filter" placeholder="Search"> 
+					</div>
+					<div class="form-group">
+						 <label for="categoryList" class="control-label">Kategorija</label>    
+						 <select class="form-control" id="categoryList">
+							<option value="0">Svi proizvodi</option>
+						 </select>
+					</div>
+					<div class="form-group">
+						 <button id="btnFilter" type="button" class="btn btn-default basketbtn">Pretraži</button>
+					</div>
+				</div>
+			</div>
+		  </div>
+		</section>
+		
+		<!--Cart section-->
+		<section id="cart" class="container-fluid">
+		    <!--Header Cart Section-->
+			<div class="row text-center">
+				<div class="col-sm-6">
+					<h2>Trenutni sadržaj vaše kupovine</h2>
+				</div>
+				<div class="col-sm-6">
+					<p>Broj artikala: <span id="countItems"></span></p>
+					<p>Ukupna suma: <span id="cartSuma"></span></p>
+				</div>
+			</div>
+			<hr>
+			<!--Body Cart Section-->
+			<div id="cartItems" class="text-center">
+			</div>
+		</section>
+		
+		<!--Contact section-->
+		<section id="contact" class="container-fluid sectionContact">
+			<!--Contact form header-->
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<h1 class="section-heading">Kontakt</h1>
+				</div>
+			</div>
+			<!--Contact form body-->
+			<div class="container">
+				<form name="sentMessage" action="mailto:pamizoki@gmail.com" id="contactForm">
+					<div class="row">
+						<!--Left Side Inputs-->
+						<div class="col-sm-6 left">
+							<div class="form-group">        
+								<input type="text" class="form-control" placeholder="Vaše ime *" id="name" required data-validation-required-message="Molimo Vas unesite Vaše ime i prezime.">  
+							</div>  
+							<div class="form-group">      
+								<input type="email" class="form-control" placeholder="Vaša email adresa *" id="email" required data-validation-required-message="Molimo Vas unesite email adresu.">  
+							</div>  
+							<div class="form-group">    
+								<input type="tel" class="form-control" placeholder="Vaš broj telefona *" id="phone" required data-validation-required-message="Molimo Vas unesite broj telefona."> 
+							</div>
+						</div>
+						<!--Right Side Textarea-->
+						<div class="col-sm-6">
+							<div class="form-group">    
+								<textarea class="form-control" placeholder="Poruka *" rows="6" id="message" required data-validation-required-message="Molimo Vas unesite sadržaj poruke."></textarea>
+							</div> 
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-push-5 col-sm-2 col-sm-pull-5">
+							<button type="submit" class="btn btn-default basketbtn">Pošalji poruku</button> 
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+		
+		<!--Footer Section-->
+		<footer>
+			<div class="container-fluid">
+				<div class="row text-center">
+				    <!--Copyright-->
+					<div class="col-sm-4 copyright">
+						<p>&copy; Copyright 2016. Designed by <em>Pamela Praščević</em></p>
+					</div>
+					<!--Share with jsSocials-->
+					<div class="col-sm-4">
+					  <ul class="list-inline">
+						<li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//rs.oriflame.com/" target="_blank">Share On Facebook</a></li>
+						<li><a href="https://twitter.com/home?status=https%3A//rs.oriflame.com/" target="_blank">Share On Twitter</a></li>
+						<li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//rs.oriflame.com/&title=&summary=&source=" target="_blank">Share On LinkedIn</a></li>
+					  </ul>
+					</div>
+					<!--My favourite links-->
+					<div class="col-sm-4 footerLink">
+						<a href="http://www.prijateljboziji.com/" target="_blank">Prijatelj Božiji</a>
+						<a href="http://rs.oriflame.com/" target="_blank">Oriflame</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	
+	</body>
+	
+</html>
